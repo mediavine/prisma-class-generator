@@ -220,13 +220,14 @@ export class PrismaConvertor {
 
 		classComponent.fields = model.fields
 			.filter((field) => {
-				if (extractRelationFields === true) {
-					return field.relationName
-				}
-				if (extractRelationFields === false) {
-					return !field.relationName
-				}
-				return true
+				return !field.relationName
+				// if (extractRelationFields === true) {
+				// 	return field.relationName
+				// }
+				// if (extractRelationFields === false) {
+				// 	return !field.relationName
+				// }
+				// return true
 			})
 			.map((field) => this.convertField(field))
 		classComponent.relationTypes =
