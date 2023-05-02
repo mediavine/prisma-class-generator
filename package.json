@@ -20,7 +20,8 @@
 		"dev": "node -r ts-node/register src/index.ts",
 		"generate:postgresql": "prisma generate --schema prisma/postgresql.prisma",
 		"generate:mysql": "prisma generate --schema prisma/mysql.prisma",
-		"generate:mongodb": "prisma generate --schema prisma/mongodb.prisma"
+		"generate:mongodb": "prisma generate --schema prisma/mongodb.prisma",
+		"postinstall": "tsc -p ./tsconfig.json || exit 0"
 	},
 	"bin": {
 		"prisma-class-generator": "dist/bin.js"
